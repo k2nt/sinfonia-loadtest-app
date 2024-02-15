@@ -1,0 +1,21 @@
+logging:
+  version: 1
+  disable_existing_loggers: False
+  formatters:
+    default:
+      "()": src.domain.logger.formatter.DefaultFormatter
+  handlers:
+    console:
+      level: INFO
+      formatter: default
+      class: logging.StreamHandler
+      stream: ext://sys.stdout
+  root:
+    handlers: [console]
+    level: DEBUG
+
+app:
+  timeout_seconds: 8
+  port: 8000
+  host: http://localhost
+  api_path: api/v1
