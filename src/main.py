@@ -5,6 +5,11 @@ from dependency_injector.wiring import Provide, inject
 
 from src.core.di import AppDI
 
+import src.lib.http as a
+
+
+a.is_success_status_code(200)
+
 
 def app_factory() -> FastAPI:
     """Create FastAPI application."""
@@ -13,7 +18,7 @@ def app_factory() -> FastAPI:
 
 
 def build():
-    """Build application dependencies."""
+    """Build dependencies."""
     # Dependency injection
     
     app_di = AppDI()
@@ -33,7 +38,7 @@ def build():
 def start(
         config_dict = Provide[AppDI.config_dict]
 ):
-    """Build and run FastAPI application."""
+    """Build and launch FastAPI application."""
     uvicorn.run(
         app=app_factory(),
         port=config_dict['app']['port'],
@@ -41,6 +46,7 @@ def start(
     
     
 def start_app():
+    """Launch application."""
     build()
     start()
 
