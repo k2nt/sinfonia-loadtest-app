@@ -13,8 +13,12 @@ def matmul(matrices: List[Matrix]) -> Matrix:
     Args:
         matrices: List[Matrix]
     """
-    if matrices is None:
-        return None
+    if not matrices:
+        raise ValueError('empty input')
+    
+    for m in matrices:
+        if not m:
+            raise ValueError('empty matrix')
         
     p: np.array = reduce(np.matmul, matrices)
     return p.tolist()
