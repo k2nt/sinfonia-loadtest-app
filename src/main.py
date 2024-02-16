@@ -59,6 +59,7 @@ def start(
     """Build and launch FastAPI application."""    
     uvicorn.run(
         app=app_factory(),
+        host=config_dict['app']['host'],
         port=config_dict['app']['port'],
         )
 

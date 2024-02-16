@@ -17,5 +17,4 @@ logging:
 app:
   timeout_seconds: 8
   port: 8000
-  host: http://localhost
-  api_path: api/v1
+  host: localhost
