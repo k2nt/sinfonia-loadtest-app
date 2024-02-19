@@ -48,7 +48,6 @@ def build(
 ):
     """Build application dependencies."""
     # Logging
-
     logging.config.dictConfig(config_dict['logging'])
 
 

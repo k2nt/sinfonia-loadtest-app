@@ -3,8 +3,8 @@ name = "sinfonia-loadtest-app"
 version = "1.0.0"
 description = "Carbon load-test application on the Sinfonia orchestration framework."
 authors = ["k2nt <khai.tnguyen@outlook.com>"]
-license = "MIT"
-readme = "README.md"
+# license = "MIT"
+# readme = "README.md"
 packages = [
     { include = "src" }
 ]
