@@ -40,7 +40,7 @@ def build_di():
             __name__
             ]
         )
-    
+
 
 @inject
 def build(
@@ -55,7 +55,7 @@ def build(
 def start(
         config_dict = Provide[AppDI.config_dict]
 ):
-    """Build and launch FastAPI application."""    
+    """Build and launch FastAPI application."""
     uvicorn.run(
         app=app_factory(),
         host=config_dict['app']['host'],

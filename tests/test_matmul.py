@@ -40,7 +40,6 @@ def test_matmul_empty_mat():
         }
 
     response = client.post("/api/v1/matmul", json=matrices)
-
     assert response.status_code == HTTPStatus.BAD_REQUEST
 
 
