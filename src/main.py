@@ -60,6 +60,8 @@ def start(
         app=app_factory(),
         host=config_dict['app']['host'],
         port=config_dict['app']['port'],
+        log_config=config_dict['logging'],
+        log_level=logging.DEBUG,
         )
 
 

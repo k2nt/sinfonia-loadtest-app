@@ -8,6 +8,12 @@ router = APIRouter()
 
 
 @router.get('/livez')
-async def get_livez():
-    """Check system component health status."""
+async def livez():
+    """Liveness probe."""
+    return ok_response('ok')
+
+
+@router.get('/readyz')
+async def readyz():
+    """Readiness probe."""
     return ok_response('ok')
