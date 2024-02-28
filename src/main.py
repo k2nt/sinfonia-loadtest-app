@@ -15,13 +15,11 @@ from src.api.router import router
 def app_factory() -> FastAPI:
     """Create FastAPI application."""
     app = FastAPI(
-        app_name="Sinfonia load test",
+        app_name="sinfonia-loadtest-app",
         )
     
     app.logger = logging.getLogger()
-    
     app.include_router(router)
-    
     return app
 
 

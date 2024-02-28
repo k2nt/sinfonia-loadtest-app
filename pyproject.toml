@@ -23,6 +23,7 @@ pydantic = "^2.6.1"
 numpy = "^1.26.4"
 setuptools = "^69.1.0"
 pytest = "^8.0.0"
+openapi-core = "0.17.2"
 
 [tool.poetry.scripts]
 start-app = "src.main:start_app"
