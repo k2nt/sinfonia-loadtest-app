@@ -16,5 +16,5 @@ logging:
 
 app:
   timeout_seconds: 8
-  port: 80
+  port: 8000
   host: 0.0.0.0
