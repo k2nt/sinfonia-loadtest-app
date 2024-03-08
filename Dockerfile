@@ -4,7 +4,7 @@ FROM python:3.11-slim as final
 # PYTHONFAULTHANDLER: Enable traceback on errors
 # PYTHONHASHSEED: Seed value for random hashes
 # PYTHONUNBUFFERED: Enable unbuffered mode when writing to terminal
-ENV PYTHONDONTWRITEBYTECODE=1 \  
+ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONFAULTHANDLER=1 \
     PYTHONHASHSEED=random \
     PYTHONUNBUFFERED=1
