@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
@@ -19,18 +19,17 @@ from src.service import fake
 router = APIRouter()
 
 
-class MatricesRequest(BaseModel):
-    """Contains two matrices."""
-    pass
+# class MatmulRequest(BaseModel):
+#     """Contains two matrices."""
+#     matrix_size: int
 
 
-@router.post('/matmul', response_model=ResponseBase)
-async def matmul():
-    """Matrix multiplication."""
-    m60 = fake.static.square_matrix_60
-    
+@router.get('/matmul', response_model=ResponseBase)
+async def matmul(sz: int = Query(..., title="Matrix size")):
+    """Matrix multiplication."""        
     try:
-        p = svc.maths.matmul([m60, m60])
+        mtx = fake.static.get_square_matrix(sz)
+        p = svc.maths.matmul([mtx, mtx])
     except ValueError as e:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
