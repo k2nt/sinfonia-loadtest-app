@@ -13,21 +13,24 @@ from src.schema.base import (
 
 import src.service as svc
 
+from src.service import fake
+
 
 router = APIRouter()
 
 
 class MatricesRequest(BaseModel):
     """Contains two matrices."""
-    matrix1: Matrix
-    matrix2: Matrix
+    pass
 
 
 @router.post('/matmul', response_model=ResponseBase)
-async def matmul(matrices: MatricesRequest):
+async def matmul():
     """Matrix multiplication."""
+    m60 = fake.static.square_matrix_60
+    
     try:
-        p = svc.maths.matmul([matrices.matrix1, matrices.matrix2])
+        p = svc.maths.matmul([m60, m60])
     except ValueError as e:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
