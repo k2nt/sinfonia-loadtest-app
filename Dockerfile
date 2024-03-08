@@ -30,9 +30,8 @@ RUN pip install "poetry==$POETRY_VERSION"
 
 COPY pyproject.toml poetry.lock ./
 COPY src ./src
-COPY tests ./tests
 RUN poetry install
 
-EXPOSE 80
+EXPOSE 8000
 
 CMD ["poetry", "run", "start-app"]
