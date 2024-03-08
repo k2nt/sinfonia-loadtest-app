@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 from src.lib.http import HTTPStatus
 
-from src.types.bigmath import Matrix
+from src.types.maths import Matrix
 
 from src.schema.base import (
     ResponseBase,
@@ -27,7 +27,7 @@ class MatricesRequest(BaseModel):
 async def matmul(matrices: MatricesRequest):
     """Matrix multiplication."""
     try:
-        p = svc.bigmath.matmul([matrices.matrix1, matrices.matrix2])
+        p = svc.maths.matmul([matrices.matrix1, matrices.matrix2])
     except ValueError as e:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,

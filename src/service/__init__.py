@@ -1,1 +1,2 @@
-import src.service.bigmath as bigmath
+from . import maths
+from . import fake

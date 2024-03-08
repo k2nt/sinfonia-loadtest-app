@@ -4,7 +4,7 @@ from functools import reduce
 
 import numpy as np
 
-from src.types.bigmath import Matrix
+from src.types.maths import Matrix
 
 
 def matmul(matrices: List[Matrix]) -> Matrix:
