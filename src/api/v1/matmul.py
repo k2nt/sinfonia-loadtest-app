@@ -25,10 +25,13 @@ router = APIRouter()
 
 
 @router.get('/matmul', response_model=ResponseBase)
-async def matmul(gen: bool = Query(..., title="Whether to generate the matrix"), sz: int = Query(..., title="Matrix size")):
+async def matmul(
+        gen: bool = Query(..., title="Whether to generate the matrix"), 
+        sz: int = Query(..., title="Matrix size")
+):
     """Matrix multiplication."""        
     try:
-        mtx = fake.static.get_square_matrix(sz) if gen else fake.maths.square_matrix(sz)
+        mtx = fake.static.get_square_matrix(sz) if not gen else fake.maths.square_matrix(sz)
         p = svc.maths.matmul([mtx, mtx])
     except ValueError as e:
         raise HTTPException(
