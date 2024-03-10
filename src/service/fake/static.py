@@ -2,7 +2,7 @@
 from typing import List
 
 
-SUPPORTED_SQUARE_MATRIX_SIZES = [5, 10, 50, 75, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]
+SUPPORTED_SQUARE_MATRIX_SIZES = [5, 10, 25, 50, 75, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]
 
 
 def get_square_matrix(size: int) -> List[List[int]]:
