@@ -15,6 +15,6 @@ logging:
     level: DEBUG
 
 app:
-  timeout_seconds: 8
-  port: 8000
+  timeout_seconds: 20
+  port: 5000
   host: 0.0.0.0
